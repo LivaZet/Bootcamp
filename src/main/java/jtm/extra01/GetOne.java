@@ -13,6 +13,15 @@ public class GetOne {
 		// 6->3->10->5->16->8->4->2->1. Iteration count=8.
 		// HINT: Use while loop.
 		int iterationCount = 0;
+		while (number != 1 && number != 0) {
+			if (number % 2 == 0) {
+				number = number / 2;
+			} else if (number % 2 != 0) {
+				number = number * 3 + 1;
+			}
+			iterationCount++;
+		}
+
 		return iterationCount;
 	}
 
@@ -24,6 +33,19 @@ public class GetOne {
 		// And return 3, because it has the biggest count of iterations.
 		// (If count of iterations is the same for several numbers, return
 		// smallest number).
+
+		int iterationCount = 0;
+		for (int x = 0; x <= maxNumber; x++) {
+			while (maxNumber != 1 && maxNumber != 0) {
+				if (maxNumber % 2 == 0) {
+					maxNumber = maxNumber / 2;
+				} else if (maxNumber % 2 != 0) {
+					maxNumber = maxNumber * 3 + 1;
+				}
+				iterationCount++;
+			}
+			
+		}
 		return 0;
 	}
 

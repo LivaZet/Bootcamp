@@ -1,5 +1,7 @@
 package jtm.activity03;
 
+import java.lang.reflect.Array;
+
 /**
  * Black Knight is brave soldier who fights till he is alive. He doesn't bother
  * if some of his arms or legs are cut off. You can kill him only when he lose
@@ -24,6 +26,10 @@ public class BlackKnight {
 		// Reset total numbers of total and alive knights to zero
 		// START
 
+		BlackKnight[] knights = new BlackKnight[3];
+		totalKnights = 0;
+		aliveKnights = 0;
+
 		// END
 	}
 
@@ -34,9 +40,23 @@ public class BlackKnight {
 		// 3. put reference of this knight into next free cell of knights static
 		// array
 		// 4. increase number of total and alive knights of static counters
-		// HINT: use "this.name" to access name of knight which otherwise is shadowed
+		// HINT: use "this.name" to access name of knight which otherwise is
+		// shadowed
 		// by parameter of constructor, which is also called "name"
 		// START
+
+		this.arms = 2;
+		this.legs = 2;
+		this.head = 1;
+		this.alive = true;
+		for (int i = 0; i < knights.length; i++) {
+			if (knights[i] == null) {
+				knights[i] = this;
+				break;
+			}
+		}
+		totalKnights++;
+		aliveKnights++;
 
 		// END
 	}
@@ -48,6 +68,17 @@ public class BlackKnight {
 		// Else return just "Haah!"
 		// START
 
+		if (!alive) {
+			if (arms <= 2 && arms >= 1) {
+				System.out.println("Bugger!");
+				arms--;
+			} else {
+				System.out.println("Haah!");
+			}
+		} else {
+			System.out.println("Only chicken beats dead!");
+		}
+
 		// END
 		return "";
 	}
@@ -58,6 +89,17 @@ public class BlackKnight {
 		// If knight has some legs, cut one off and return "Bollocks!"
 		// Else return just "Haah!"
 		// START
+
+		if (!alive) {
+			if (legs <= 2 && legs >= 1) {
+				System.out.println("Bollocks!");
+				legs--;
+			} else {
+				System.out.println("Haah!");
+			}
+		} else {
+			System.out.println("Only chicken beats dead!");
+		}
 
 		// END
 		return "";
@@ -74,6 +116,20 @@ public class BlackKnight {
 		// Else return "You'l burn in hell forever!"
 		// START
 
+		if (!alive) {
+			if (head == 1) {
+				this.head = this.head--;
+				deadKnights++;
+				aliveKnights--;
+			}
+			if (aliveKnights > 0) {
+				System.out.println("You'l newer win!" + name + " will still fight!");
+			} else {
+				System.out.println("You'l burn in hell forever!");
+			}
+		} else {
+			System.out.println("Only chicken beats dead!");
+		}
 		// END
 		return "";
 	}
@@ -85,6 +141,13 @@ public class BlackKnight {
 		// e.g. if Cnut and Arthur are still alive return Cnut, Arthur
 		// If only Arthur is alive return Arthur
 		// If no one is alive return empty string
+
+		for (int i = 0; i < knights.length; i++) {
+			if (aliveKnights > 0) {
+				System.out.println(knights.toString());
+			}
+		}
+
 		return null;
 	}
 	// END
