@@ -25,7 +25,7 @@ public class GetOne {
 		return iterationCount;
 	}
 
-	public int theMostComplexNo(int maxNumber) {
+	public static int theMostComplexNo(int maxNumber) {
 		// TODO #2: Calculate how many iterations each number from 1 to
 		// maxNumber (including) to get value till 1.
 		// Return the number, which takes most iterations to do that.
@@ -35,6 +35,7 @@ public class GetOne {
 		// smallest number).
 
 		int iterationCount = 0;
+		int result = 0;
 		for (int x = 0; x <= maxNumber; x++) {
 			while (maxNumber != 1 && maxNumber != 0) {
 				if (maxNumber % 2 == 0) {
@@ -44,9 +45,9 @@ public class GetOne {
 				}
 				iterationCount++;
 			}
-			
+			return result = iterationCount;
 		}
-		return 0;
+		return result;
+		
 	}
-
 }

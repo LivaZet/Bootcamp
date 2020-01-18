@@ -26,6 +26,19 @@ public class MaxMultiple {
      */
     public static int maxMultiple(int divisor, int bound) {
         // Your code here
+    	
+//    	int max = 0;
+//    	for (int i=1; i <=bound; i++){
+//    		if(i % divisor == 0){
+//    			max = i;
+//    		}
+//    	}
+    	
+    	for(int i = bound; i > 0; i--) {
+			if(i % divisor == 0)
+				return i;
+		}
+    	
         return -1;
     }
 }
