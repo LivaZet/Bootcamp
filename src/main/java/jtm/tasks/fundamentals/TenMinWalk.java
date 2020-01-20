@@ -18,6 +18,26 @@ public class TenMinWalk {
      */
     public static boolean isValid(char[] walk) {
 
-        return false;
+    	if (walk.length !=10){
+    		return false;
+    	}
+    	
+    	int x = 0;
+    	int y = 0;
+    	
+    	for (char direction: walk){ // for (int i = 0; i < walk.length; i++) { char c = walk[i]; ....
+    		if (direction == 'n'){
+    			y++;
+    	 		}else if (direction == 's'){
+    	 			y--;
+    	 		}else if (direction == 'e'){
+    	 			x++;
+    	 		}else if (direction == 'w'){
+    	 			x--;
+    	 		}
+    	}
+    	
+    	boolean result = x == 0 && y == 0;
+        return result;
     }
 }
