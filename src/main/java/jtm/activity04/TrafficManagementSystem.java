@@ -17,12 +17,12 @@ public class TrafficManagementSystem {
 
 	public static Transport[] getTransports() {
 		// TODO return required value
-		return transports.length;
+		return transports;
 	}
 
 	public static void addTransport(int i) {
 		// TODO create new array of transports in size of passed value
-		int[] transportArray = new int[i]; 
+		transports = new Transport[i]; 
 	}
 
 	public static void setVehicle(Transport transport, int i) {
@@ -33,7 +33,7 @@ public class TrafficManagementSystem {
 
 	public static void addRoads(int i) {
 		// TODO create new array of roads in size of passed value
-		int[] roadsArray = new int[i]; 
+		roads = new Road[i]; 
 	}
 
 	public static Road[] getRoads() {

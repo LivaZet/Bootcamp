@@ -2,6 +2,8 @@ package jtm.activity03;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.*;
+
 public class Array {
 	static int[] array;
 
@@ -18,9 +20,10 @@ public class Array {
 		
 		
 		int[] array = new int [6];
-		Arrays.sort(array);
-		String n = "0";
+		String n = "";
 		int result = Integer.parseInt(n);
+		sort(array);
+
 
 		// END
 		
@@ -41,10 +44,10 @@ public class Array {
 		// TODO return reference to this array
 		// START
 		
-		Arrays.sort(array);
+		return null;
 		
 		// END
-		return null;
+
 	}
 
 }

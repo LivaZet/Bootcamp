@@ -21,7 +21,7 @@ public class Transport {
 		this.id = id;
 		this.consumption = consumption;
 		this.tankSize = tankSize;
-		this.fuelInTank = 100.0F;
+		this.fuelInTank = tankSize;
 	}
 
 	/*- TODO #2
@@ -71,7 +71,8 @@ public class Transport {
 
 	@Override
 	public String toString() {
-		return String.format(Locale.US, "Id:%s , cons: %.1f, /100km, tank:%i, l, fuel:%.2f, l", id, consumption, tankSize,fuelInTank );
+		return String.format(Locale.US, "Id:%s cons:%.1fl/100km, tank:%dl, fuel:%.2fl", id, consumption, tankSize,
+				fuelInTank);
 	}
 
 	// Return transport id and type as string e.g. "AAA Transport"
@@ -79,7 +80,7 @@ public class Transport {
 	protected final String getType() {
 		// TODO return required value
 		String type = this.getClass().getSimpleName();
-		return id + type;
+		return id + " " + type;
 	}
 
 	// HINT: use getType() to describe transport and road.toString() to describe
@@ -93,15 +94,18 @@ public class Transport {
 		// TODO If there is no enough fuel in tank, return string in form:
 		// "Cannot move on From–To, 180km. Necessary
 		// fuel:0.00l, fuel in tank:0.00l"
-		String result = "";
-		if (fuelInTank >= (road.getDistance()*consumption/100)){
-			fuelInTank = this.fuelInTank - (road.getDistance()*consumption/100);
-			result = getType() + " is moving on " + road.toString();
-		}else if (fuelInTank < (road.getDistance()*consumption/100)){
-			result = "Cannot move on " + road.toString() + ". Necessary fuel: " + (consumption * road.getDistance()/100) + "l, fuel in tank: " + fuelInTank + "l";
+
+		float neededFuel = road.getDistance() * getConsumption() / 100;
+		if (fuelInTank >= neededFuel) {
+			fuelInTank = this.fuelInTank - neededFuel;
+			return getType() + " is moving on " + road.toString();
+		} else {
+			return "Cannot move on " + road.toString() + ". Necessary fuel:"
+					+ String.format(Locale.US, "%.2f", neededFuel) + "l, fuel in tank:"
+					+ String.format(Locale.US, "%.2f", fuelInTank) + "l";
 		}
-		
-		return result;
+
+
 	}
 
 }

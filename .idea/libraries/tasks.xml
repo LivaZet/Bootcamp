@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="tasks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/classes/jtm/tasks.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
