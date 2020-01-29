@@ -1,5 +1,6 @@
 package jtm.testSuite;
 
+import jtm.activity06.InterfaceTests;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite.SuiteClasses;
 
@@ -9,7 +10,6 @@ import jtm.activity03.BlackKnightTest;
 import jtm.activity03.RandomPersonTest;
 import jtm.activity04.TrafficManagementTest;
 import jtm.activity05.EncapsulationTests;
-import jtm.activity06.InterfaceTests;
 import jtm.activity07.AnimalTests;
 import jtm.activity08.SimpleCalcTests;
 import jtm.activity09.OrdersTests;
