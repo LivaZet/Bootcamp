@@ -29,7 +29,64 @@ package jtm.activity09;
  *  - ItemN: Customer1,Customer2: 4
  */
 
-public class Orders {
+import java.util.*;
+
+
+public class Orders implements Iterator<String> {
+
+	String customer; // Name of the customer
+	String name; // Name of the requested item
+	int count; // Count of the requested items
+
+	private List<Order> orders; //List of customer orders
+	private ListIterator<Order> iterator;
+
+	public Orders(){
+		this.orders = new LinkedList<>();
+		this.iterator = orders.listIterator();
+	}
+
+	public void add (Order item){
+		this.iterator.add(item);
+		this.iterator.previous();
+	}
+
+	public void getItemsList(){
+		List<Order> copyOfList = new ArrayList<>(orders);
+	}
+
+	public void getItemsSet(){
+		Set<Order> getItemsSet = new HashSet<>(orders);
+//		getItemsSet.add(new Order(customer, name, count));
+
+	}
+
+	public void sort(){
+		Collections.sort(orders);
+	}
+
+	@Override
+	public boolean hasNext() {
+		return iterator.hasNext();
+	}
+
+	@Override
+	public String next() {
+
+		ListIterator<Order> iterator = orders.listIterator();
+		while ( iterator.hasNext() ) {
+			System.out.println(iterator.next());
+		}return "NoSuchElementException";
+	}
+
+	public void remove(){
+		iterator.remove();
+	}
+
+	public String toString(){
+		return orders.toString();
+	}
+
 	/*-
 	 * TODO #1
 	 * Create data structure to hold:
@@ -40,4 +97,7 @@ public class Orders {
 	 *   2. when constructing list of orders, set number of current order to -1
 	 *      (which is usual approach when working with iterateable collections).
 	 */
+
+
+
 }

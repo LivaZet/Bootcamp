@@ -15,13 +15,15 @@ public interface Humanoid {
     /**
      * @param weight for which this humanoid weight is needed to be changed
      */
-    public static void setWeight(int weight);
+ //   public static void setWeight(int weight);
 
     /**
      * @return "Dead" if humanoid successfully killed himself
      */
-    public static String killHimself();
+//    public static String killHimself();
 
+
+ //   String killHimself();
 
     /**
      * @return number of arms for Humanoid
@@ -42,7 +44,7 @@ public interface Humanoid {
     /**
      * @return "Alive" or "Dead" depending on his status
      */
-    public static String isAlive();
+  //  public static String isAlive();
 
     /**
      * @return value of Humanoid in form "Type weight [Backpack]", e.g.

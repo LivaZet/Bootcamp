@@ -21,12 +21,12 @@ public class Human implements Humanoid {
         return this.weight;
     }
 
-    @Override
+//    @Override
     public void setWeight(int weight) {
         this.weight = weight;
     }
 
-    @Override
+ //   @Override
     public String killHimself() {
         if (this.alive == true) {
             this.alive = false;
@@ -55,7 +55,7 @@ public class Human implements Humanoid {
         }
     }
 
-    @Override
+ //   @Override
     public String isAlive() {
         if (this.alive == true) {
             return "Alive";
