@@ -32,7 +32,7 @@ package jtm.activity09;
 import java.util.*;
 
 
-public class Orders implements Iterator<String> {
+public class Orders implements Iterator<Order> {
 
 	String customer; // Name of the customer
 	String name; // Name of the requested item
@@ -46,19 +46,20 @@ public class Orders implements Iterator<String> {
 		this.iterator = orders.listIterator();
 	}
 
-	public void add (Order item){
+	public void add(Order item){
 		this.iterator.add(item);
 		this.iterator.previous();
 	}
 
-	public void getItemsList(){
-		List<Order> copyOfList = new ArrayList<>(orders);
+	public List<Order> getItemsList(){
+
+		List<Order> getItemsList = new LinkedList<>(orders);
+		return getItemsList;
 	}
 
-	public void getItemsSet(){
+	public Set<Order> getItemsSet(){
 		Set<Order> getItemsSet = new HashSet<>(orders);
-//		getItemsSet.add(new Order(customer, name, count));
-
+		return getItemsSet;
 	}
 
 	public void sort(){
@@ -71,18 +72,15 @@ public class Orders implements Iterator<String> {
 	}
 
 	@Override
-	public String next() {
+	public Order next() {
+	return iterator.next();
 
-		ListIterator<Order> iterator = orders.listIterator();
-		while ( iterator.hasNext() ) {
-			System.out.println(iterator.next());
-		}return "NoSuchElementException";
 	}
-
+@Override
 	public void remove(){
 		iterator.remove();
 	}
-
+@Override
 	public String toString(){
 		return orders.toString();
 	}
