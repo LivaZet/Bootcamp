@@ -20,9 +20,9 @@ public class Array {
 		
 		
 		int[] array = new int [6];
-		String n = "";
-		int result = Integer.parseInt(n);
-		sort(array);
+		//String n = "";
+		//int result = Integer.parseInt(n);
+		Arrays.sort(array);
 
 
 		// END
@@ -43,8 +43,7 @@ public class Array {
 	public static int[] returnSortedArray() {
 		// TODO return reference to this array
 		// START
-		
-		return null;
+		return array;
 		
 		// END
 
