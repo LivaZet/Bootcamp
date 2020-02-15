@@ -1,6 +1,8 @@
 package jtm.activity03;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Black Knight is brave soldier who fights till he is alive. He doesn't bother
@@ -26,7 +28,7 @@ public class BlackKnight {
 		// Reset total numbers of total and alive knights to zero
 		// START
 
-		BlackKnight[] knights = new BlackKnight[3];
+		BlackKnight [] knights = new BlackKnight[initialNumber];
 		totalKnights = 0;
 		aliveKnights = 0;
 
@@ -44,14 +46,14 @@ public class BlackKnight {
 		// shadowed
 		// by parameter of constructor, which is also called "name"
 		// START
-
+		this.name = name;
 		this.arms = 2;
 		this.legs = 2;
 		this.head = 1;
 		this.alive = true;
 		for (int i = 0; i < knights.length; i++) {
 			if (knights[i] == null) {
-				knights[i] = this;
+				knights[i] = new BlackKnight(name);
 				break;
 			}
 		}
@@ -67,20 +69,19 @@ public class BlackKnight {
 		// If knight has some arms, cut one off and return "Bugger!"
 		// Else return just "Haah!"
 		// START
-
+		String result = "";
 		if (!alive) {
 			if (arms <= 2 && arms >= 1) {
-				System.out.println("Bugger!");
+				result = "Bugger!";
 				arms--;
 			} else {
-				System.out.println("Haah!");
+				result = "Haah!";
 			}
-		} else {
-			System.out.println("Only chicken beats dead!");
-		}
+			result = "Only chicken beats dead!";
+			}
 
 		// END
-		return "";
+		return result;
 	}
 
 	public String cutOffLeg() {
@@ -89,20 +90,19 @@ public class BlackKnight {
 		// If knight has some legs, cut one off and return "Bollocks!"
 		// Else return just "Haah!"
 		// START
-
+		String result = "";
 		if (!alive) {
 			if (legs <= 2 && legs >= 1) {
-				System.out.println("Bollocks!");
+				result = "Bollocks!";
 				legs--;
 			} else {
-				System.out.println("Haah!");
+				result = "Haah!";
 			}
-		} else {
-			System.out.println("Only chicken beats dead!");
+			result = "Only chicken beats dead!";
 		}
-
+		return result;
 		// END
-		return "";
+
 	}
 
 	public String cutOffHead() {
@@ -144,11 +144,11 @@ public class BlackKnight {
 
 		for (int i = 0; i < knights.length; i++) {
 			if (aliveKnights > 0) {
-				System.out.println(knights.toString());
+				Arrays.sort(knights);
 			}
 		}
 
-		return null;
+		return knights.toString();
 	}
 	// END
 }
