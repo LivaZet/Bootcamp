@@ -17,11 +17,11 @@ public class Array {
 		// Hint: use Arrays.sort(...) from
 		// https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html
 		// START
-		
-		
-		int[] array = new int [6];
-		//String n = "";
-		//int result = Integer.parseInt(n);
+
+		array = new int[args.length];
+		for (int i = 0; i < array.length; i++){
+			array[i] = Integer.parseInt(args[i]);
+		}
 		Arrays.sort(array);
 
 
