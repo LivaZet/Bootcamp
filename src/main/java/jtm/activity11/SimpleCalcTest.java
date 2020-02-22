@@ -3,6 +3,7 @@ package jtm.activity11;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,11 +23,14 @@ public class SimpleCalcTest {
 	@Before
 	public void setUp() {
 		// TODO initialize SimpleCalc object
+		sc = new SimpleCalc();
 	}
 
 	@Test
 	public void testAddInRange() {
 		// TODO test addition for case where both numbers and result is in allowed range
+		int result = sc.add(5, 6);
+//		Assert.assertEquals("Given values should be in range [-10,10]", [-10,10], result)
 	}
 
 	@Test
