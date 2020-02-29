@@ -2,6 +2,7 @@ package jtm.activity12;
 
 import org.assertj.swing.util.Range;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.criteria.From;
 import java.sql.*;
@@ -9,6 +10,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+@Component
 public class TeacherManager {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class TeacherManager {
     }
 
     protected Connection conn;
+
 
     public TeacherManager() {
         /* TODO
